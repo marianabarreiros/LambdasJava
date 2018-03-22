@@ -5,9 +5,14 @@
  */
 package lambdas;
 
+import hotel.Hotel;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.function.Predicate;
 
 /**
  *
@@ -41,6 +46,19 @@ public class Lambdas {
         
         str = Arrays.asList(str1, str2, str3);
         str.forEach(u -> System.out.println(u));
+        str.stream();
+        
+        List<Hotel> hoteis = new ArrayList<>();
+        Hotel h1 = new Hotel(100.65, '2');
+        Hotel h2 = new Hotel(100.65, '3');
+        Hotel h4 = new Hotel(100.65, '4');
+        Hotel h3 = new Hotel(200.65, '1');
+        
+        hoteis = Arrays.asList(h1, h2, h3);
+        
+        Optional<Hotel> hotel = hoteis.stream()
+            .min(Comparator.comparingDouble(Hotel::getValor));  
+        System.out.println(hotel.toString());
     }
     
     
