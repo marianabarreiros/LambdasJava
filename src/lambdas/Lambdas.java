@@ -5,6 +5,10 @@
  */
 package lambdas;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  *
  * @author Win-7
@@ -29,6 +33,14 @@ public class Lambdas {
         Edivisivel isDiv = (x, y) -> 
                 (x%y==0);
         System.out.println(isDiv.teste(5, 2));
+        
+        List<String> str = new ArrayList<>();
+        String str1 = new String("olá");
+        String str2 = new String("Mariana");
+        String str3 = new String("como vai?");
+        
+        str = Arrays.asList(str1, str2, str3);
+        str.forEach(u -> System.out.println(u));
     }
     
     
