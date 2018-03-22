@@ -15,12 +15,20 @@ public class Lambdas {
      * @param args the command line arguments
      */
         interface ValorNumerico{
-        boolean teste(int n);
+            boolean teste(int n);
         }
+        interface Edivisivel{
+            boolean teste(int n, int y);
+        }
+        
     public static void main(String[] args) {
-        ValorNumerico isPar = (int i) -> 
+        ValorNumerico isPar = i -> 
                 (i%2==0);
         System.out.println(isPar.teste(10));
+        
+        Edivisivel isDiv = (x, y) -> 
+                (x%y==0);
+        System.out.println(isDiv.teste(5, 2));
     }
     
     
